@@ -16,6 +16,7 @@ class Transfer
   end
   
   def execute_transaction
+<<<<<<< HEAD
     #binding.pry
     #What are the prereqs for a transfer to pass 
     #1. Both accounts need to be open 
@@ -33,6 +34,10 @@ class Transfer
     
     
     if @sender.balance > @amount && @status == "pending" && @receiver.status == "open" && @sender.status == "open"
+=======
+    binding.pry
+    if @sender.balance > @amount && @status == "pending"
+>>>>>>> 90c5d8ea1d6105c6c7f60510d3440af4bf87761f
       @sender.balance -= @amount
       @receiver.balance += @amount
       @status = "complete"
@@ -41,6 +46,7 @@ class Transfer
       return "Transaction rejected. Please check your account balance."
     end 
   end 
+<<<<<<< HEAD
   
   def reverse_transfer
     if @status == "complete"
@@ -49,6 +55,8 @@ class Transfer
       @status = "reversed"
     end
   end 
+=======
+>>>>>>> 90c5d8ea1d6105c6c7f60510d3440af4bf87761f
 
 end
 
